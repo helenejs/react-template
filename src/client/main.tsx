@@ -8,7 +8,7 @@ import { App } from '@/client/app.tsx'
 const clientOptions: ClientOptions = {
   mode: TransportMode.HttpSSE,
   host: window.location.hostname,
-  port: import.meta.env.MODE === 'development' ? 8002 : undefined,
+  port: import.meta.env.MODE === 'development' ? 8002 : Number(window.location.port),
   errorHandler: console.error,
   secure: window.location.protocol === 'https:',
   idlenessTimeout: 600000, // 10 minutes,
